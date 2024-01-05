@@ -12,8 +12,8 @@ app.get('/resource', (req, res) => {
             console.error('Script encountered an error:', stderr);
             res.status(500).json({ error: 'Script error' });
         } else {
-        
-            res.json(stdout);
+            let data=JSON.parse(stdout)
+            res.json(data);
         }
     });
 });
