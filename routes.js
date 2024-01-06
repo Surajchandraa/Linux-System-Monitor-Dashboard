@@ -1,8 +1,10 @@
 const express = require('express');
 const { exec } = require('child_process');
+const path = require('path')
 
 const app = express();
 app.use(express.json())
+app.use(express.static("public"));
 app.get('/resource', (req, res) => {
     exec('bash resource.sh', (err, stdout, stderr) => {
         if (err) {
@@ -17,6 +19,10 @@ app.get('/resource', (req, res) => {
         }
     });
 });
+
+app.get("/",(req,res)=>{
+    res.sendFile(path.join(__dirname,"public","index.html"))
+})
 
 
 
