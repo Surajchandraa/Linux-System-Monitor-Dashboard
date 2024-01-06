@@ -1,10 +1,12 @@
 const express = require('express');
 const { exec } = require('child_process');
 const path = require('path')
+const cors=require('cors');
 
 const app = express();
 app.use(express.json())
 app.use(express.static("public"));
+app.use(cors())
 app.get('/resource', (req, res) => {
     exec('bash resource.sh', (err, stdout, stderr) => {
         if (err) {

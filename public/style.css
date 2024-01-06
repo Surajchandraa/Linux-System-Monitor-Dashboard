@@ -41,3 +41,36 @@ body{
     font-size: larger;
     
 }
+
+.table-container {
+    margin: 50px auto;
+    width: 60%;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgb(88, 88, 88);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  tr:nth-child(even) {
+    background-color: rgb(124, 124, 124);
+  }
+  
+  tr:hover {
+    background-color: #ddd;
+    color: black;
+  }
