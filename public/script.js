@@ -1,7 +1,7 @@
 let ram=document.getElementById("ram");
 let battery=document.getElementById("battery");
 let disk=document.getElementById("disk");
-let sys_uptime=document.getElementById("system-up");
+let syst=document.getElementById("system");
 let data=document.getElementsByClassName("data")[0];
 let top_el=document.getElementsByClassName("top")[0];
 
@@ -84,8 +84,39 @@ battery.addEventListener("click",(e)=>{
 
 
 
+disk.addEventListener("click",(e)=>{
+    clearInterval(intervalId);
+    intervalId=setInterval(()=>{
+    let api=fetch("http://localhost:5000/resource")
+    api.then((value)=>{
+        return value.json()
+    }).then((val)=>{
 
+        data.innerHTML=''
+        let newel=document.createElement("div");
+        newel.classList.add("table-container")
+        newel.innerHTML=`Dashboard<table><tr><th>Attribute</th><th>Value</th></tr><tr><td>Disk usage percentage</td><td>${val[3].Disk_usage_percentage}</td></tr><tr><td>Disk usage absolute</td><td>${val[3].Disk_usage_absolute}</td> </tr></table>`
+        data.appendChild(newel)
+    })
+},1000);
+})
 
+syst.addEventListener("click",(e)=>{
+    clearInterval(intervalId);
+    intervalId=setInterval(()=>{
+    let api=fetch("http://localhost:5000/resource")
+    api.then((value)=>{
+        return value.json()
+    }).then((val)=>{
+
+        data.innerHTML=''
+        let newel=document.createElement("div");
+        newel.classList.add("table-container")
+        newel.innerHTML=`Dashboard<table><tr><th>Attribute</th><th>Value</th></tr><tr><td>System uptime</td><td>${val[2].System_uptime}</td></tr></table>`
+        data.appendChild(newel)
+    })
+},1000);
+})
 
 
 
