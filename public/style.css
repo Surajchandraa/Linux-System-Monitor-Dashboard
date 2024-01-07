@@ -41,6 +41,7 @@ body{
     color: white;
     text-align: center;
     font-size: larger;
+    overflow-y: scroll;
     
 }
 

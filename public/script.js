@@ -17,7 +17,7 @@ ram.addEventListener("click",(e)=>{
 
         data.innerHTML=''
         let newel=document.createElement("div");
-        newel.classList.add("table-container")
+        // newel.classList.add("table-container")
         newel.innerHTML=`Dashboard<table><tr><th>Attribute</th><th>Value</th></tr><tr><td>Free Ram</td><td>${val[0].free_Ram}</td></tr><tr><td>Total Ram</td><td>${val[0].Total_Ram}</td> </tr></table>`
         data.appendChild(newel)
     })
@@ -70,6 +70,10 @@ battery.addEventListener("click",(e)=>{
               <td>${val[1].Battery_Technology}</td>
             </tr>
             <tr>
+              <td>Model</td>
+              <td>${val[1].model}</td>
+            </tr>
+            <tr>
               <td>Cycle count</td>
               <td>${val[1].Cycle_Count}</td>
             </tr>
@@ -94,7 +98,7 @@ disk.addEventListener("click",(e)=>{
 
         data.innerHTML=''
         let newel=document.createElement("div");
-        newel.classList.add("table-container")
+        // newel.classList.add("table-container")
         newel.innerHTML=`Dashboard<table><tr><th>Attribute</th><th>Value</th></tr><tr><td>Disk usage percentage</td><td>${val[3].Disk_usage_percentage}</td></tr><tr><td>Disk usage absolute</td><td>${val[3].Disk_usage_absolute}</td> </tr></table>`
         data.appendChild(newel)
     })
@@ -111,7 +115,7 @@ syst.addEventListener("click",(e)=>{
 
         data.innerHTML=''
         let newel=document.createElement("div");
-        newel.classList.add("table-container")
+        // newel.classList.add("table-container")
         newel.innerHTML=`Dashboard<table><tr><th>Attribute</th><th>Value</th></tr><tr><td>System uptime</td><td>${val[2].System_uptime}</td></tr></table>`
         data.appendChild(newel)
     })
